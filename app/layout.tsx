@@ -7,6 +7,8 @@ import { ThemeProvider } from "@/lib/theme/ThemeContext";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import { Analytics } from '@vercel/analytics/react'  
+
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -47,7 +49,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
           
           <Footer />
-          <WhatsAppButton />
+          <WhatsAppButton />          
+          <Analytics /> 
         </ThemeProvider>
       </body>
     </html>

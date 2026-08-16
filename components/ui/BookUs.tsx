@@ -14,8 +14,8 @@ export default function BookUs() {
       <div className={`mt-4 inline-block ${
         isGreen ? 'bg-emerald-700' : 'bg-amber-600'
       } text-white text-sm font-semibold px-6 py-2 rounded-full shadow-md`}>
-        Book us on – 08037161334 / 09128604617 / 08075884433
-      </div>
+        Book us on – 08088357068 / 07088791808 / 08037161334
+      </div> {/* Book us on – 08037161334 / 09128604617 / 08075884433 */}
       <div className="mt-3 text-xs text-slate-600 font-light">
         Open Hours:- Mon–Fri: 8:30am – 5:00pm &nbsp;|&nbsp; Sat: 8:30am – 1:00pm
       </div>
