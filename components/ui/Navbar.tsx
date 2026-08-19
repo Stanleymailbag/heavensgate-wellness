@@ -1,13 +1,12 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useTheme } from '@/lib/theme/ThemeContext'
-import ThemeToggle from './ThemeToggle'
 
 export default function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
   const { theme } = useTheme()
   const isGreen = theme === 'green'
@@ -20,11 +19,6 @@ export default function Navbar() {
     { href: '/about', label: 'About Us' },
   ]
 
-  // Close mobile menu when route changes
-  useEffect(() => {
-    setMobileOpen(false)
-  }, [pathname])
-
   const isActive = (href: string) => {
     if (href === '/') return pathname === '/'
     return pathname.startsWith(href)
@@ -32,8 +26,7 @@ export default function Navbar() {
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-40 border-b border-slate-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex flex-wrap items-center justify-between gap-2">
-        
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-3 shrink-0">
           <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-lg ${
@@ -49,7 +42,7 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation – hidden on mobile */}
         <nav className="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
           {links.map((link) => {
             const active = isActive(link.href)
@@ -69,22 +62,18 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Right side: Theme toggle + Consultation button + Hamburger */}
+        {/* Right side: Theme toggle + Consultation button + Hamburger (visible on mobile) */}
         <div className="flex items-center space-x-4 shrink-0">
           <ThemeToggle />
           <a
             href="https://wa.me/2348088357068"
-            className={`hidden sm:inline-block px-5 py-2.5 rounded-xl text-sm font-semibold shadow-sm transition ${
-              isGreen
-                ? 'bg-emerald-800 hover:bg-emerald-900 text-white'
-                : 'bg-amber-700 hover:bg-amber-800 text-white'
-            }`}
+            className="hidden sm:inline-block px-5 py-2.5 rounded-xl text-sm font-semibold shadow-sm transition bg-emerald-800 hover:bg-emerald-900 text-white"
           >
             Consultation
           </a>
-          {/* Hamburger Menu Button */}
+          {/* ★ HAMBURGER – Always visible on mobile, hidden on desktop ★ */}
           <button
-            onClick={() => setMobileOpen(!mobileOpen)}
+            onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-slate-700 text-2xl focus:outline-none"
             aria-label="Toggle menu"
           >
@@ -93,39 +82,37 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* ★ Mobile Menu Overlay – Fixed with proper z-index and visibility ★ */}
+      {/* ★ MOBILE MENU OVERLAY ★ */}
       <div
         className={`fixed inset-0 z-50 transition-opacity duration-300 ${
-          mobileOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
-        {/* Dark backdrop */}
+        {/* Backdrop */}
         <div
           className="absolute inset-0 bg-black/50"
-          onClick={() => setMobileOpen(false)}
+          onClick={() => setIsOpen(false)}
         ></div>
-        
-        {/* Menu panel – slides in from the right */}
+        {/* Panel */}
         <div
           className={`absolute top-0 right-0 h-full w-64 bg-white shadow-2xl p-6 flex flex-col space-y-6 text-base font-semibold transition-transform duration-300 ease-in-out ${
-            mobileOpen ? 'translate-x-0' : 'translate-x-full'
+            isOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
           <button
-            onClick={() => setMobileOpen(false)}
+            onClick={() => setIsOpen(false)}
             className="self-end text-slate-500 text-2xl focus:outline-none"
             aria-label="Close menu"
           >
             <i className="fas fa-times"></i>
           </button>
-          
           {links.map((link) => {
             const active = isActive(link.href)
             return (
               <Link
                 key={link.href}
                 href={link.href}
-                onClick={() => setMobileOpen(false)}
+                onClick={() => setIsOpen(false)}
                 className={`py-2 ${
                   active
                     ? 'text-slate-950 border-b-2 border-slate-950'
