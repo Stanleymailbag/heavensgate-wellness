@@ -54,7 +54,7 @@ export default function TargetedChallenges() {
           How We Help You Feel More Comfortable
         </h2>
         <div className={`w-12 h-1 mx-auto mt-4 rounded-full ${isGreen ? 'bg-emerald-700' : 'bg-amber-600'}`}></div>
-        <p className="text-slate-500 text-sm md:text-base font-light mt-4 leading-relaxed">
+        <p className="text-base md:text-lg text-slate-500 mt-2">
           Gentle wellness sessions and lifestyle support designed for your daily routine. Our approach focuses on relaxation, natural routines, and general well-being.
         </p>
         

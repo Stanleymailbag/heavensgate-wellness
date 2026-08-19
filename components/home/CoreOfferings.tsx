@@ -102,7 +102,7 @@ export default function CoreOfferings() {
                   </h3>
                 </div>
 
-                <p className="text-slate-600 text-sm font-light leading-relaxed max-w-3xl">
+                <p className="text-base md:text-lg text-slate-600 text-sm font-light leading-relaxed max-w-3xl">
                   {o.desc}
                 </p>
                 

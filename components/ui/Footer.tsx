@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-3 gap-8 pb-8 border-b border-slate-800">
         <div>
           <h4 className="text-white font-bold text-base mb-3">Heavensgate Wellness Center</h4>
-          <p className="text-xs text-slate-400 leading-relaxed font-light">
+          <p className="text-sm text-slate-400 leading-relaxed font-light">
             Providing structural health restorations using pure biological assessments and unadulterated organic remedies.
           </p>
           <div className="mt-4 flex space-x-4 text-white">
@@ -21,20 +21,22 @@ export default function Footer() {
         </div>
         <div className="text-xs font-light space-y-3">
           <h4 className="text-white font-bold text-sm">Our Center</h4>
-          <p><strong className="text-slate-200 block font-semibold">Primary Center:</strong> Plot A10 Ehimiri Housing Estate, by World Bank Police Division, KM4, Ikot Ekpene Road, Umuahia.</p>
+          <p className="text-sm text-slate-400 leading-relaxed font-light">
+            <strong className="text-slate-200 block font-semibold">Primary Center:</strong> Plot A10 Ehimiri Housing Estate, by World Bank Police Division, KM4, Ikot Ekpene Road, Umuahia.
+          </p>
         </div>
         <div className="text-xs font-light">
           <h4 className="text-white font-bold text-sm mb-3">Direct Channels</h4>
-          <p>For appointments, home-service requests, or product orders, chat with our triage team directly.</p>
-          <p className="mt-3 text-white font-bold">
+          <p className="text-sm text-slate-400 leading-relaxed font-light">For appointments, home-service requests, or product orders, chat with our triage team directly.</p>
+          <p className="mt-3 text-[14px] text-white font-bold">
             <i className={`fab fa-whatsapp ${isGreen ? 'text-green-400' : 'text-amber-400'} mr-1.5 text-sm align-middle`}></i>
-            +234 807 588 4433
+            +234 708 879 1808
           </p>
         </div>
       </div>
 
       {/* ★ UPDATED: Combined disclaimer matching homepage wording */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-6 text-[10px] text-slate-500 font-light leading-relaxed text-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-6 text-[11px] text-slate-500 font-light leading-relaxed text-center">
         <strong>Disclaimer:</strong> Our herbal products are food supplements and our services are not intended to diagnose, treat, cure, or prevent any disease. Our wellness assessments and support are complementary and not a substitute for professional medical advice. Always consult your physician for any medical condition. Individual results may vary.
       </div>
       

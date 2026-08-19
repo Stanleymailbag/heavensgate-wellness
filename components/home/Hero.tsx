@@ -46,7 +46,7 @@ export default function Hero() {
               <h4 className="text-xs font-bold text-slate-950 uppercase tracking-wider">
                 Home Wellness Visits
               </h4>
-              <p className="text-xs text-slate-600 font-normal mt-0.5 leading-relaxed">
+              <p className="text-sm text-slate-600 font-normal mt-0.5 leading-relaxed">
                 We bring our energy wellness check and relaxation sessions to your home across Umuahia and nearby areas. Relax in your own space.
               </p>
             </div>

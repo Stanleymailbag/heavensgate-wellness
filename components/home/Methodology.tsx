@@ -8,7 +8,7 @@ export default function Methodology() {
         <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight mt-3">
           Why Data + Organic Formulation Works
         </h2>
-        <p className="text-sm md:text-base text-slate-500 font-light mt-2">
+        <p className="text-base md:text-lg text-slate-500 mt-2">
           Moving from surface assessment to promoting wellness from the root
         </p>
       </div>

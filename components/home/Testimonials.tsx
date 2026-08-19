@@ -19,7 +19,7 @@ export default async function Testimonials() {
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-950 tracking-tight mt-3 leading-tight">
             Some of our Clients' Testimonials...
           </h2>
-          <p className="text-base md:text-lg text-slate-600 font-normal mt-3 leading-relaxed">
+          <p className="text-base md:text-lg text-slate-600 text-sm italic">
             Discover how our wellness services have promoted peoples' vitality, comfort and general wellness.
           </p>
         </div>

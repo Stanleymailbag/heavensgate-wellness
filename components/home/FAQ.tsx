@@ -33,7 +33,7 @@ export default function FAQ() {
         <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight mt-3">
           Frequently Asked Questions
         </h2>
-        <p className="text-slate-500 text-sm md:text-base font-light mt-2">
+        <p className="text-base md:text-lg text-slate-500 mt-1">
           Direct explanations about the natural herbal blends and services in Heavensgate Wellness.
         </p>
       </div>
