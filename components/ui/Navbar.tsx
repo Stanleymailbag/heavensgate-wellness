@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useTheme } from '@/lib/theme/ThemeContext'
+import ThemeToggle from '@/components/ui/ThemeToggle'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
