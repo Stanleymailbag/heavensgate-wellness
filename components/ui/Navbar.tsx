@@ -63,7 +63,7 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Right side: Theme toggle + Consultation button + Hamburger (visible on mobile) */}
+        {/* Right side: Theme toggle + Consultation button + Hamburger */}
         <div className="flex items-center space-x-4 shrink-0">
           <ThemeToggle />
           <a
@@ -72,13 +72,13 @@ export default function Navbar() {
           >
             Consultation
           </a>
-          {/* ★ HAMBURGER – Always visible on mobile, hidden on desktop ★ */}
+          {/* ★ HAMBURGER – Using plain text ☰ instead of FontAwesome ★ */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-slate-700 text-2xl focus:outline-none"
+            className="md:hidden text-slate-700 text-3xl focus:outline-none px-2 py-1"
             aria-label="Toggle menu"
           >
-            <i className="fas fa-bars"></i>
+            ☰
           </button>
         </div>
       </div>
@@ -100,12 +100,13 @@ export default function Navbar() {
             isOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
+          {/* ★ CLOSE BUTTON – Using plain text ✕ instead of FontAwesome ★ */}
           <button
             onClick={() => setIsOpen(false)}
             className="self-end text-slate-500 text-2xl focus:outline-none"
             aria-label="Close menu"
           >
-            <i className="fas fa-times"></i>
+            ✕
           </button>
           {links.map((link) => {
             const active = isActive(link.href)
