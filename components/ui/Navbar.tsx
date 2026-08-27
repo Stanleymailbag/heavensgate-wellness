@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useTheme } from '@/lib/theme/ThemeContext'
 import ThemeToggle from '@/components/ui/ThemeToggle'
@@ -28,12 +29,17 @@ export default function Navbar() {
   return (
     <header className="bg-white shadow-sm sticky top-0 z-40 border-b border-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo – Using actual image */}
         <Link href="/" className="flex items-center space-x-3 shrink-0">
-          <div className={`w-10 h-10 rounded-xl flex items-center justify-center text-lg ${
-            isGreen ? 'bg-emerald-700 text-white' : 'bg-amber-600 text-white'
-          }`}>
-            <i className="fas fa-gate"></i>
+          <div className="w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center bg-white border border-slate-100 shadow-sm">
+            <Image
+              src="/images/logo.jpg"
+              alt="Heavensgate Wellness Center Logo"
+              width={48}
+              height={48}
+              className="object-contain"
+              priority
+            />
           </div>
           <div>
             <span className="text-base font-extrabold tracking-tight text-slate-950 block leading-tight">HEAVENSGATE</span>
@@ -72,7 +78,6 @@ export default function Navbar() {
           >
             Consultation
           </a>
-          {/* ★ HAMBURGER – Using plain text ☰ instead of FontAwesome ★ */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-slate-700 text-3xl focus:outline-none px-2 py-1"
@@ -83,24 +88,21 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* ★ MOBILE MENU OVERLAY ★ */}
+      {/* Mobile Menu Overlay */}
       <div
         className={`fixed inset-0 z-50 transition-opacity duration-300 ${
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
-        {/* Backdrop */}
         <div
           className="absolute inset-0 bg-black/50"
           onClick={() => setIsOpen(false)}
         ></div>
-        {/* Panel */}
         <div
           className={`absolute top-0 right-0 h-full w-64 bg-white shadow-2xl p-6 flex flex-col space-y-6 text-base font-semibold transition-transform duration-300 ease-in-out ${
             isOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
-          {/* ★ CLOSE BUTTON – Using plain text ✕ instead of FontAwesome ★ */}
           <button
             onClick={() => setIsOpen(false)}
             className="self-end text-slate-500 text-2xl focus:outline-none"

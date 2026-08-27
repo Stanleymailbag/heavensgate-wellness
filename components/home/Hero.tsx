@@ -82,13 +82,12 @@ export default function Hero() {
             />
           </div>
 
-          <p className="mt-4 w-full text-center text-sm md:text-base font-medium text-slate-700 italic">
+          <p className="mt-4 w-full text-center text-sm md:text-sm font-medium text-slate-700 italic">
             <i className="fas fa-heart text-rose-500 mr-2"></i>
             Heavensgate Cares for you, your loved ones, and the aged at home.
           </p>
 
-          <p className="mt-0 w-full text-center text-sm md:text-base font-medium text-slate-700 italic">
-            <i className="fas fa-heart text-rose-500 mr-2"></i>
+          <p className="mt-0 w-full text-center text-sm md:text-sm font-medium text-slate-700 italic">
             It is our tradition to assess your wellness level before enhancing it.
           </p>
         </div>
